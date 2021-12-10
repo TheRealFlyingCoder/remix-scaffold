@@ -1,0 +1,3 @@
+structure: split
+routes:
+  - name: Todo

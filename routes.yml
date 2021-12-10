@@ -1,0 +1,6 @@
+structure: split
+routes:
+  - name: Test
+    children: 
+      - name: Second level
+      - name: Second level again

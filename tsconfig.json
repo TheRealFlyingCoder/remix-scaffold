@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "rootDir": "src",
+    "module": "CommonJS",
+    "target": "es2020",
+    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+    "strict": true,
+    "skipLibCheck": true,
+    "declaration": false,
+    "outDir": "./build",
+    "importHelpers": false
+  }
+}
