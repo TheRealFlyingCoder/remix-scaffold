@@ -10,7 +10,7 @@ type Options = {
 	type: 'blog' | 'portal'
 }
 
-const getDefinitionOptions = () => {
+const getDefinitionOptions = () => { 
 	const files = fs.readdirSync(path.join(__dirname, '../templates/definitions'));
 	return files.map(file => path.basename(file, '.yml'));
 }

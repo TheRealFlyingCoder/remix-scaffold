@@ -4,10 +4,12 @@ import fs from 'fs';
 import yaml from 'js-yaml';
 import chalk from 'chalk';
 import { YamlConfig } from '../typings/Config';
+import { routeSchema } from '../utils/routeSchema';
 
 type Options = {
 	definition: string;
 	// clear: boolean;
+	// reset: boolean;
 };
 
 export const command: string = 'generate';
@@ -25,7 +27,13 @@ export const builder: CommandBuilder<Options, Options> = yargs =>
 		// 	type: 'boolean',
 		// 	alias: 'c',
 		// 	default: false,
-		// 	description: 'Clear folders that no longer exist in the YAML routes definition',
+		// 	description: 'Clear folders and files that no longer exist in the YAML routes definition',
+		// },
+		// reset: {
+		// 	type: 'boolean',
+		// 	alias: 'r',
+		// 	default: false,
+		// 	description: 'Override existing route folders and files, and clear missing ones',
 		// },
 	});
 
@@ -41,7 +49,8 @@ export const handler = (argv: Arguments<Options>): void => {
 		}
 
 		const doc = yaml.load(fs.readFileSync(defPath, 'utf8'), { json: true }) as YamlConfig;
-    console.log(JSON.stringify(doc))
+    	const checks = routeSchema.safeParse(doc);
+		console.log(checks.success);
 
 	} catch (e) {
 		console.log(chalk.red(e));
