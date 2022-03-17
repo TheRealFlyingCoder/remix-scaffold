@@ -12,8 +12,8 @@ type Options = {
 	// reset: boolean;
 };
 
-export const command: string = 'generate';
-export const desc: string = 'Generate the structure defined in your YAML routes definition file';
+export const command = 'generate';
+export const desc = 'Generate the structure defined in your YAML routes definition file';
 
 export const builder: CommandBuilder<Options, Options> = yargs =>
 	yargs.options({
@@ -50,8 +50,8 @@ export const handler = (argv: Arguments<Options>): void => {
 
 		const doc = yaml.load(fs.readFileSync(defPath, 'utf8'), { json: true }) as YamlConfig;
 		const config = validateConfig(doc);
+		console.log(JSON.stringify(config));
 		//WE HAVE A VALID AND FORMATTED ROUTES OBJECT
-
 	} catch (e) {
 		console.log(chalk.red(e));
 		process.exit();

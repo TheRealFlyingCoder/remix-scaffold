@@ -1,53 +1,58 @@
 {
-  "name": "remix-scaffold",
-  "version": "0.0.1",
-  "description": "Simple Scaffolding for Remix",
-  "main": "./build/cli.js",
-  "scripts": {
-    "build": "rimraf -rf ./build && tsc && cpy ./src/templates/definitions ./build/templates/definitions",
-    "test:generate": "npm run build && node ./build/cli.js generate",
-    "test:init": "npm run build && node ./build/cli.js init -h",
-    "typecheck": "tsc --noEmit"
-  },
-  "bin": {
-    "@theflyingcoder/remix-scaffold": "./build/cli.js",
-    "remix-scaffold": "./build/cli.js"
-  },
-  "keywords": [
-    "remix",
-    "scaffolding"
-  ],
-  "author": {
-    "name": "Tom Rowe",
-    "email": "theflyingcoder@hotmail.com",
-    "url": "https://github.com/TheRealFlyingCoder"
-  },
-  "repository": {
-    "url": "https://github.com/TheRealFlyingCoder/remix-scaffold",
-    "type": "git"
-  },
-  "homepage": "https://github.com/TheRealFlyingCoder/remix-scaffold#readme",
-  "license": "MIT",
-  "files": [
-    "build",
-    "package.json",
-    "README.md"
-  ],
-  "devDependencies": {
-    "@types/js-yaml": "^4.0.5",
-    "@types/node": "^16.11.12",
-    "@types/yargs": "^17.0.7",
-    "copyfiles": "^2.4.1",
-    "cpy-cli": "^3.1.1",
-    "prettier": "^2.5.1",
-    "rimraf": "^3.0.2",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.3.5"
-  },
-  "dependencies": {
-    "chalk": "^4.1.2",
-    "js-yaml": "^4.1.0",
-    "yargs": "^17.3.0",
-    "zod": "^3.11.6"
-  }
+	"name": "remix-scaffold",
+	"version": "0.0.1",
+	"description": "Simple Scaffolding for Remix",
+	"main": "./build/cli.js",
+	"scripts": {
+		"build": "rimraf -rf ./build && tsc && cpy ./src/templates/definitions ./build/templates/definitions",
+		"test:generate": "npm run build && node ./build/cli.js generate",
+		"test:init": "npm run build && node ./build/cli.js init -h",
+		"typecheck": "tsc --noEmit",
+		"lint": "eslint --ext .ts src/"
+	},
+	"bin": {
+		"@theflyingcoder/remix-scaffold": "./build/cli.js",
+		"remix-scaffold": "./build/cli.js"
+	},
+	"keywords": [
+		"remix",
+		"scaffolding"
+	],
+	"author": {
+		"name": "Tom Rowe",
+		"email": "theflyingcoder@hotmail.com",
+		"url": "https://github.com/TheRealFlyingCoder"
+	},
+	"repository": {
+		"url": "https://github.com/TheRealFlyingCoder/remix-scaffold",
+		"type": "git"
+	},
+	"homepage": "https://github.com/TheRealFlyingCoder/remix-scaffold#readme",
+	"license": "MIT",
+	"files": [
+		"build",
+		"package.json",
+		"README.md"
+	],
+	"devDependencies": {
+		"@types/js-yaml": "^4.0.5",
+		"@types/node": "^16.11.12",
+		"@types/yargs": "^17.0.7",
+		"@typescript-eslint/eslint-plugin": "^4.23.0",
+		"@typescript-eslint/parser": "^4.23.0",
+		"copyfiles": "^2.4.1",
+		"cpy-cli": "^3.1.1",
+		"eslint": "^7.26.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"prettier": "^2.5.1",
+		"rimraf": "^3.0.2",
+		"ts-node": "^9.1.1",
+		"typescript": "^4.3.5"
+	},
+	"dependencies": {
+		"chalk": "^4.1.2",
+		"js-yaml": "^4.1.0",
+		"yargs": "^17.3.0",
+		"zod": "^3.11.6"
+	}
 }
