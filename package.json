@@ -17,7 +17,11 @@
     "remix",
     "scaffolding"
   ],
-  "author": "Thomas Rowe",
+  "author": {
+    "name": "Tom Rowe",
+    "email": "theflyingcoder@hotmail.com",
+    "url": "https://github.com/TheRealFlyingCoder"
+  },
   "repository": {
     "url": "https://github.com/TheRealFlyingCoder/remix-scaffold",
     "type": "git"
