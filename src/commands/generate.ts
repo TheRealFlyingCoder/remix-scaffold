@@ -4,7 +4,7 @@ import fs from 'fs';
 import yaml from 'js-yaml';
 import chalk from 'chalk';
 import { YamlConfig } from '../typings/Config';
-import { routeSchema } from '../utils/routeSchema';
+import { validateConfig } from '../utils/routeSchema';
 
 type Options = {
 	definition: string;
@@ -49,8 +49,8 @@ export const handler = (argv: Arguments<Options>): void => {
 		}
 
 		const doc = yaml.load(fs.readFileSync(defPath, 'utf8'), { json: true }) as YamlConfig;
-    	const checks = routeSchema.safeParse(doc);
-		console.log(checks.success);
+		const config = validateConfig(doc);
+		//WE HAVE A VALID AND FORMATTED ROUTES OBJECT
 
 	} catch (e) {
 		console.log(chalk.red(e));
