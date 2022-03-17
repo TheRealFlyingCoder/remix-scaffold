@@ -4,7 +4,7 @@ import fs from 'fs';
 import yaml from 'js-yaml';
 import chalk from 'chalk';
 import { YamlConfig } from '../typings/Config';
-import { validateConfig } from '../utils/routeSchema';
+import { validateConfig } from '../utils/routesSchema';
 
 type Options = {
 	definition: string;

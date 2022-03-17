@@ -1,3 +1,10 @@
-structure: split
+structure: co-locate
 routes:
-  - name: Todo
+  - name: Home
+    type: index
+  - name: Login
+  - name: Jokes
+    children:
+      - name: New
+      - name: Joke
+        slug: jokeId

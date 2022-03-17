@@ -15,15 +15,15 @@ const routeObject: z.Schema<RouteObject> = z.late.object(() => ({
     children: z.array(routeObject).optional()
 }));
 
-export const configSchema = z.object({
+export const routesSchema = z.object({
     structure: z.enum(['co-locate', 'split'],).default('co-locate'),
     routes: z.array(routeObject)
 })
  
-export type ScaffoldConfig = z.infer<typeof configSchema>
+export type RoutesConfig = z.infer<typeof routesSchema>
 
-export const validateConfig = (doc: YamlConfig): ScaffoldConfig => {
-    const checks = configSchema.safeParse(doc);
+export const validateConfig = (doc: YamlConfig): RoutesConfig => {
+    const checks = routesSchema.safeParse(doc);
 
     if(!checks.success) {
         throw checks.error.issues.reduce((acc, curr) => {

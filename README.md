@@ -5,7 +5,7 @@
 
 Remix scaffold, is a code-gen tool for [Remix](https://remix.run/) designed to increase your productivity, and manage your route heirarchy.
 
-To do this, we provide a `routes.yml` file at the root of your app, which allows you to define the structure and behaviour of your site (Or utilise pre-built structures from the community) from which your routes and views are automatically generated.
+After initialising the `routes.yml` file at the root of your app, you can define the site structure from which your routes and views are automatically generated.
 
 ## Getting Started
 
